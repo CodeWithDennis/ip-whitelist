@@ -7,7 +7,7 @@ Version: 1.0
 Author: Dennis Elsinga
 */
 
-class IP_Whitelist
+class IPWhitelist
 {
 
     /**
@@ -55,8 +55,15 @@ class IP_Whitelist
         // Handle addition of IP address
         if (isset($_POST['add'])) {
             $ip_address = sanitize_text_field($_POST['ip_address']);
-            if (!empty($ip_address) && filter_var($ip_address, FILTER_VALIDATE_IP) && !in_array($ip_address, $this->get_ip_addresses())) {
+            if (empty($ip_address)) {
+                add_settings_error('ip_whitelist', 'empty_ip_address', __('IP address field cannot be empty.', 'ip-whitelist'));
+            } elseif (!filter_var($ip_address, FILTER_VALIDATE_IP)) {
+                add_settings_error('ip_whitelist', 'invalid_ip_address', __('Invalid IP address format.', 'ip-whitelist'));
+            } elseif (in_array($ip_address, $this->get_ip_addresses())) {
+                add_settings_error('ip_whitelist', 'duplicate_ip_address', __('IP address is already in the whitelist.', 'ip-whitelist'));
+            } else {
                 $this->add($ip_address);
+                add_settings_error('ip_whitelist', 'ip_address_added', __('IP address added to whitelist.', 'ip-whitelist'), 'updated');
             }
         }
 
@@ -65,6 +72,9 @@ class IP_Whitelist
             $ip_address = sanitize_text_field($_POST['delete']);
             if (!empty($ip_address)) $this->delete($ip_address);
         }
+
+        // Display any errors associated with the "ip_whitelist" setting
+        settings_errors('ip_whitelist');
 
         // Display the plugin interface
         $this->plugin_interface();
@@ -145,4 +155,4 @@ class IP_Whitelist
 }
 
 // Create a new instance of the IP_Whitelist class to handle IP whitelisting
-$new_whitelist = new IP_Whitelist();
+$new_whitelist = new IPWhitelist();

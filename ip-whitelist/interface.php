@@ -1,10 +1,8 @@
 <?php $ip_addresses = $this->get_ip_addresses(); ?>
 <section id="whitelist-plugin" class="wp-core-ui wrap">
-    <div class="wrap">
-        <h1 class="wp-heading-inline">
-            <?= __('IP Whitelist Settings') ?>
-        </h1>
-    </div>
+    <h1 class="wp-heading-inline">
+        <?= __('IP Whitelist Settings') ?>
+    </h1>
     <table class="wp-list-table widefat fixed striped table-view-list">
         <thead>
         <tr>
@@ -26,14 +24,14 @@
         <?php endforeach; ?>
         <?php if (empty($ip_addresses)): ?>
             <tr>
-                <td colspan="2"><?= __('No results found') ?></td>
+                <td colspan="2"><?= __('No IP addresses have been added yet.') ?></td>
             </tr>
         <?php endif; ?>
         </tbody>
     </table>
     <div class="tablenav bottom">
         <form method="POST">
-            <td><input type="text" name="ip_address" value="<?= (empty($ip_addresses)) ? $_SERVER['REMOTE_ADDR'] : '' ?>" required></td>
+            <td><input type="text" name="ip_address" value="<?= (empty($ip_addresses)) ? $_SERVER['REMOTE_ADDR'] : '' ?>" placeholder="<?= __('IP Address') ?>"></td>
             <td><input type="submit" name="add" value="<?= __('Add') ?>" class="button"></td>
         </form>
     </div>
