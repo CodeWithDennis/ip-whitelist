@@ -1,0 +1,17 @@
+#whitelist-plugin .delete {
+    background: transparent;
+    color: #1d2327;
+    border: none;
+    cursor: pointer;
+    color: red;
+}
+
+#whitelist-plugin table {
+    margin-top: 10px;
+}
+
+/*#whitelist-plugin input[type=text] {*/
+/*    background: whitesmoke;*/
+/*    padding-left: 7px;*/
+/*    margin-left: 0;*/
+/*}*/
