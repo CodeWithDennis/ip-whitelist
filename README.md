@@ -1,5 +1,5 @@
 # Whitelist
-**A plugin that allows you to restrict access to your website by allowing only certain IP addresses. This is useful for situations where you want to limit access to your website to a specific group of users.**
+**A WordPress plugin that allows you to restrict access to your website by allowing only certain IP addresses. This is useful for situations where you want to limit access to your website to a specific group of users.**
 
 <img width="1717" alt="Whitelist Plugin Interface" src="https://github.com/denniselsinga/wordpress-ip-whitelist-plugin/assets/23448484/8ddbb64c-76c6-43df-9dd4-7324434ecc7d">
 
