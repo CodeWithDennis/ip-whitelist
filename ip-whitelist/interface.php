@@ -33,7 +33,7 @@
     </table>
     <div class="tablenav bottom">
         <form method="POST">
-            <td><input type="text" name="ip_address" placeholder="<?= __('127.0.0.1') ?>" required></td>
+            <td><input type="text" name="ip_address" value="<?= (empty($ip_addresses)) ? $_SERVER['REMOTE_ADDR'] : '' ?>" required></td>
             <td><input type="submit" name="add" value="<?= __('Add') ?>" class="button"></td>
         </form>
     </div>
