@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Whitelist
-Description: A simple plugin to whitelist IP addresses and block unauthorized visitors
+Description: A simple plugin to ip-whitelist IP addresses and block unauthorized visitors
 Version: 1.0
 Author: Dennis Elsinga
 */
@@ -36,7 +36,7 @@ class IP_Whitelist
             'IP Whitelist',
             'IP Whitelist',
             'manage_options',
-            'whitelist',
+            'ip-whitelist',
             array($this, 'plugin_menu_callback'),
             'dashicons-admin-site'
         );
@@ -71,7 +71,7 @@ class IP_Whitelist
     }
 
     /**
-     * Include the interface file, which contains the HTML for the IP whitelist page.
+     * Include the interface file, which contains the HTML for the IP ip-whitelist page.
      *
      * @return void
      */
