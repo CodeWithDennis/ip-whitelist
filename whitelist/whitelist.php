@@ -133,10 +133,10 @@ class IP_Whitelist
     {
         // Get the saved IP addresses from the options table
         $allowed_ips = $this->get_ip_addresses();
-
+        
         // Check if the user's IP is in the allowed IPs array
         $user_ip = $_SERVER['REMOTE_ADDR'];
-        if (!in_array($user_ip, $allowed_ips)) {
+        if (!in_array($user_ip, $allowed_ips) && !empty($allowed_ips)) {
             status_header(401);
             die();
         }
