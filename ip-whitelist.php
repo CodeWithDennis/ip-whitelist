@@ -103,7 +103,7 @@ class IPWhitelist
     {
         $ip_addresses = $this->get_ip_addresses();
         $ip_addresses[] = $ip_address;
-        update_option('addresses', $ip_addresses);
+        update_option('whitelisted-addresses', $ip_addresses);
     }
 
     /**
@@ -119,7 +119,7 @@ class IPWhitelist
         $index = array_search($ip_address, $ip_addresses);
         if ($index !== false) {
             unset($ip_addresses[$index]);
-            update_option('addresses', $ip_addresses);
+            update_option('whitelisted-addresses', $ip_addresses);
         }
     }
 
@@ -131,7 +131,7 @@ class IPWhitelist
 
     public function get_ip_addresses(): mixed
     {
-        return get_option('addresses', []);
+        return get_option('whitelisted-addresses', []);
     }
 
     /**

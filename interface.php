@@ -24,7 +24,7 @@
         <?php endforeach; ?>
         <?php if (empty($ip_addresses)): ?>
             <tr>
-                <td colspan="2"><?= __('No IP addresses have been added yet.') ?></td>
+                <td colspan="2"><?= __('No IP addresses have been added to the whitelist yet.') ?></td>
             </tr>
         <?php endif; ?>
         </tbody>
