@@ -32,13 +32,14 @@ class IPWhitelist
 
     public function add_plugin_menu_item(): void
     {
+
         add_menu_page(
-            'IP Whitelist',
-            'IP Whitelist',
+            'Whitelist',
+            'Whitelist',
             'manage_options',
-            'ip-whitelist',
+            'whitelist',
             array($this, 'plugin_menu_callback'),
-            'dashicons-admin-site'
+            'dashicons-unlock'
         );
     }
 
