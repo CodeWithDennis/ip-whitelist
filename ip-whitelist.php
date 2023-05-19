@@ -12,7 +12,7 @@ class IPWhitelist
 
     /**
      * IP_Whitelist constructor.
-     * Initializes the IP_Whitelist object.
+     * Initializes the IPWhitelist object.
      * Adds necessary hooks to the WordPress environment.
      */
 
@@ -155,5 +155,5 @@ class IPWhitelist
 
 }
 
-// Create a new instance of the IP_Whitelist class to handle IP whitelisting
+// Create a new instance of the IPWhitelist class to handle IP whitelisting
 $new_whitelist = new IPWhitelist();
